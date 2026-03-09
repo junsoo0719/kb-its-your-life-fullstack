@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS3 Position Property</title>
+    <style>
+      /* 위치 조정 position 속성 중요, 까다로움
+        relative: 기준 필요
+        fixed: 화면(브라우저) 기준
+        static: 기본 위치 */
+      .box {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box:nth-child(1) {
+        background-color: red;
+      }
+      .box:nth-child(2) {
+        background-color: green;
+      }
+      .box:nth-child(3) {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </body>
+</html>
