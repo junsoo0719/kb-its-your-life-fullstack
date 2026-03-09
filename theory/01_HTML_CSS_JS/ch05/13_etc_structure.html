@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS3 Selector Basic</title>
+    <style>
+      ul {
+        overflow: hidden;
+      }
+      li {
+        /* none: bullet(점)을 없앰
+              list-style로 bullet 스타일 변경 가능 */
+        list-style: none;
+        /* 가로 배치 */
+        float: left;
+        /* padding: 테투리 안 쪽 여백 */
+        padding: 15px;
+      }
+      li:first-child {
+        /* 순서: 좌측상단부터 시계 방향 */
+        border-radius: 10px 0 0 10px;
+      }
+      li:last-child {
+        border-radius: 0 10px 10px 0;
+      }
+      li:nth-child(2n) {
+        /* #rrggbb, #rgb, #aarrggbb(알파), #argb로도 사용가능 -> 16진수 */
+        /* rgb(255,255,255), rgba(255,255,255,0.5) 함수로도 사용가능 -> 10진수 */
+        background-color: #ff0003;
+      }
+      li:nth-child(2n + 1) {
+        background-color: #800000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 본문에 ul이 여러개 있을 수 있기 때문에 <nav> semantic태그를 사용해서 nav ul으로 스타일 적용하는 것이 좋음 -->
+    <ul>
+      <li>첫 번째</li>
+      <li>두 번째</li>
+      <li>세 번째</li>
+      <li>네 번째</li>
+      <li>다섯 번째</li>
+      <li>여섯 번째</li>
+      <li>일곱 번째</li>
+    </ul>
+    <h1>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, praesentium
+      possimus numquam nulla non accusantium pariatur animi unde vitae, facilis
+      nihil temporibus voluptatum tempora obcaecati, corrupti incidunt nemo!
+      Tenetur, tempore.
+    </h1>
+  </body>
+</html>

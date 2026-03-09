@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+      /* 원래 table 태그 바로 아래에 tbody 태그가 생략된 것이기 때문에
+        table > tr > th로 사용하면 안되고 table tr > th으로 후손, 자손 섞어 사용 */
+      table tr > th {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>이름</th>
+        <th>지역</th>
+      </tr>
+      <tr>
+        <td>윤인성</td>
+        <td>서울특별시 강서구 내발산동</td>
+      </tr>
+    </table>
+  </body>
+</html>

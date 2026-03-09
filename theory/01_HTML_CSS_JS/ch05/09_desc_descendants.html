@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+      /* 클래스 선택자 다음으로 많이 사용: 후손, 자손 선택자 */
+      /* 자손: 지정 태그 기준 바로 한 단계 아래 태그
+        후손: 지정 태그 아래 모든 태그 */
+      /* 계층 구조: DOM Tree */
+      /* 한 칸 공백으로 후손 지정 */
+      #header h1 {
+        color: red;
+      }
+      /* #header .title 또는 #section .title로도 사용 가능 */
+      #section h1 {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1 class="title">Lorem ipsum</h1>
+      <div id="nav">
+        <h1>Navigation</h1>
+      </div>
+    </div>
+
+    <div id="section">
+      <h1 class="title">Lorem ipsum</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+  </body>
+</html>
