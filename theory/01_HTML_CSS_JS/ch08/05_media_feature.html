@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Media Feature</title>
+    <meta
+      name="viewport"
+      content="user-scalable=no,initial-scale=1,maximum-scale=1"
+    />
+    <style>
+      /* width(min/max도 있음), orientation 가장 많이 씀 */
+      /* breakpoint: 화면 크기에 따라 CSS가 바뀌는 기준점
+    media 쿼리 바깥 속성: 공통 적용
+    media 쿼리에 의해 바뀌는 부분만 해상도에 따라 적용 */
+      /* 이 경우 모두 각각 적용할 필요 없고 하나는 디폴트로 설정하면 됨
+    보통 스마트폰을 기준(mobile first)으로 하고 태블릿과 데스크톱은 min만 살리면 됨 */
+      /* 반대로 pc first이면 max를 살려야됨 */
+      /* 스마트폰 */
+      @media screen and (max-width: 767px) {
+        body {
+          background-color: red;
+        }
+      }
+
+      /* 태블릿PC */
+      @media screen and (min-width: 768px) and (max-width: 959px) {
+        body {
+          background-color: green;
+        }
+      }
+
+      /* 데스크톱 */
+      @media screen and (min-width: 960px) {
+        body {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lorem ipsum dolor sit amet</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+      temporibus quaerat expedita obcaecati ex quos saepe molestiae, quo,
+      architecto soluta nulla rerum exercitationem et porro enim quam, itaque
+      aut velit. Facilis, iure accusantium? Earum aspernatur necessitatibus
+      doloremque magnam nobis quod dolorem, commodi eaque quae nam. Cumque
+      maxime ab voluptatem officiis rem quia possimus non, libero ea,
+      aspernatur, ratione dolore. Libero. Ducimus magni eaque molestias dolores
+      obcaecati non. Provident ab repellat aspernatur beatae doloribus error
+      eveniet quis voluptate distinctio ratione ipsam impedit exercitationem
+      earum, enim magnam iste ullam nam nesciunt excepturi! Odit mollitia qui
+      quis beatae ipsa nostrum temporibus consequatur optio modi earum,
+      voluptatum nihil a quibusdam ut reprehenderit. Doloribus ut consequuntur
+      reprehenderit dolores, mollitia et maiores officia odit veritatis facere.
+      Porro, voluptates, fuga optio minus natus deleniti est, debitis
+      reprehenderit magnam quaerat temporibus ipsam nostrum molestiae fugit.
+      Beatae eum id quibusdam soluta doloribus sed, sunt itaque quas
+      exercitationem facere nesciunt!
+    </p>
+  </body>
+</html>
