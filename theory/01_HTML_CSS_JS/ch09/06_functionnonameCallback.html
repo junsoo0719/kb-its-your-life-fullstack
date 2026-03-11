@@ -1,0 +1,13 @@
+<script>
+  // 함수를 선언합니다.
+  function callTenTimes(callback) {
+    for (let i = 0; i < 10; i++) {
+      callback();
+    }
+  }
+  // 함수를 호출합니다.
+  //   이 기법 권장, 가독성은 떨어지지만 장점: closer 사용 가능
+  callTenTimes(function () {
+    alert('함수 호출');
+  });
+</script>

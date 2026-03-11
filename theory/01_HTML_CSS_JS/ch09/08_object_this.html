@@ -1,0 +1,13 @@
+<script>
+  // 객체를 선언합니다.
+  let person = {
+    name: '윤인성',
+    eat: function (food) {
+      // 그냥 name으로 쓰면 일반 변수, 현재 객체의 name에 접근하려면 this.name
+      alert(this.name + '이 ' + food + '을/를 먹습니다.');
+    },
+  };
+  // 메서드를 호출합니다.
+  // this: 호출할 때 결정됨 person이 호출했으므로 person이 this
+  person.eat('밥');
+</script>
