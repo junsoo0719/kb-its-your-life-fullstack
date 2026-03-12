@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .circle {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+      }
+      #eye {
+        background-color: white;
+        width: 80px;
+        height: 80px;
+        left: 40px;
+        top: 40px;
+      }
+      #eyeball {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        left: 40px;
+        top: 50px;
+      }
+      #red {
+        background-color: orangered;
+        position: relative;
+        left: 100px;
+        top: 100px;
+      }
+      #orange {
+        background-color: orange;
+        left: 220px;
+        top: 220px;
+      }
+      #yellow {
+        background-color: yellow;
+        left: 360px;
+        top: 200px;
+      }
+      #green {
+        background-color: greenyellow;
+        left: 500px;
+        top: 300px;
+      }
+      #blue {
+        background-color: skyblue;
+        left: 660px;
+        top: 270px;
+      }
+      img {
+        width: 150px;
+        height: 75px;
+        position: fixed;
+        left: 760px;
+        top: 435px;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="red" class="circle">
+      <div id="eye" class="circle"></div>
+      <div id="eyeball" class="circle"></div>
+    </div>
+    <div id="orange" class="circle"></div>
+    <div id="yellow" class="circle"></div>
+    <div id="green" class="circle"></div>
+    <div id="blue" class="circle"></div>
+    <img src="poop.jpg" />
+  </body>
+</html>
