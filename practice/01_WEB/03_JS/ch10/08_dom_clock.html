@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script></script>
+  </head>
+  <script>
+    window.onload = function () {
+      const clock = document.getElementById('clock');
+
+      setInterval(function () {
+        const now = new Date();
+        clock.innerHTML = now.toString();
+      }, 1000);
+    };
+  </script>
+  <body>
+    <h1 id="clock"></h1>
+  </body>
+</html>
