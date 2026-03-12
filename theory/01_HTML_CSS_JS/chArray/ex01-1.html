@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex01-1</title>
+  </head>
+  <body>
+    <div class="fruits">
+      <p>Apple</p>
+      <p>Banana</p>
+      <p>Orange</p>
+    </div>
+
+    <script>
+      const fruits = document.querySelectorAll('.fruits p');
+      // fruits는 3개의 P 태그를 포함한 노드 리스트(배열과 비슷한 구조)다.
+      // 이제 fruits를 배열로 변환하자.
+      const fruitArray = Array.from(fruits);
+      console.log(fruitArray);
+
+      // 람다 함수(화살표 함수)
+      // 이제 배열을 취급하므로 map()을 사용할 수 있다.
+      // textContent: 문자열
+      const fruitNames = fruitArray.map((fruit) => fruit.textContent);
+      console.log(fruitNames);
+      // ["Apple", "Banana", "Orange"]
+    </script>
+  </body>
+</html>
