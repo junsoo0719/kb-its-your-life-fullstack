@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>오늘 할 일</h1>
+    <ul></ul>
+    <button>할 일 추가</button>
+
+    <script>
+      const list = document.querySelector('ul');
+      const addBtn = document.querySelector('button');
+
+      addBtn.addEventListener('click', function () {
+        const newTodo = document.createElement('li');
+        newTodo.textContent = '이 닦기';
+        list.append(newTodo);
+      });
+    </script>
+  </body>
+</html>
