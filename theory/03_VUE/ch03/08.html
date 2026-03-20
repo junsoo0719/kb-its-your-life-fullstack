@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" :value="name" @input="changeName" />
+      <br />
+      이름: <span>{{name}}</span>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { name: '' };
+        },
+        methods: {
+          changeName(e) {
+            this.name = e.target.value;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
