@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>제가 좋아하는 음식들</h1>
+      <ul>
+        <li v-for="(food, index) in foods" :key="index">{{food.food}}</li>
+      </ul>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            foods: [],
+            baseUrl:
+              'https://port-0-kb7-back-node-mmc3pmla14c7b8b4.sel3.cloudtype.app',
+          };
+        },
+
+        methods: {
+          async fetchFoods() {
+            try {
+              const response = await fetch(`${this.baseUrl}/food/all`);
+              this.foods = await response.json();
+            } catch (err) {
+              console.error(err);
+            }
+          },
+
+          async sendUserData() {
+            try {
+              const response = await fetch(`${this.baseUrl}/food/send`);
+              console.log('data 전송 완료');
+            } catch (err) {
+              console.error(err);
+            }
+          },
+        },
+
+        // created() {
+        //   this.fetchFoods();
+        // },
+        mounted() {
+          this.fetchFoods();
+        },
+        unmounted() {
+          this.sendUserData();
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
