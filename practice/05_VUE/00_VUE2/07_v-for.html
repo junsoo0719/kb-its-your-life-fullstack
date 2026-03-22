@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>폭싹 속았수다 등장인물</h1>
+      <ul>
+        <li v-for="(character, index) in foxacArr" v-bind:key="index">
+          배역 : {{character.casting}} / 배우 : {{character.actor}}
+        </li>
+      </ul>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            foxacArr: [
+              { casting: '오애순', actor: '이지은' },
+              { casting: '양관식', actor: '박보검' },
+              { casting: '오애순', actor: '문소리' },
+              { casting: '양관식', actor: '박해준' },
+            ],
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

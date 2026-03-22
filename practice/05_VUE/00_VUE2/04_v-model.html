@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{inputText}}</h1>
+      <input
+        type="text"
+        v-bind:value="inputText"
+        v-on:input="updateText($event)"
+      />
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            inputText: 'input 태그에 값을 입력 하세요!',
+          };
+        },
+
+        methods: {
+          updateText(event) {
+            this.inputText = event.target.value;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

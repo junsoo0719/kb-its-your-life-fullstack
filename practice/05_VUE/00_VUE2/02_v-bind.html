@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <img v-bind:src="imgSrc" />
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            imgSrc:
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEkg8YT1K0EhwNo6-A4TRwZ_NI97sfdmcpqw&s',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
