@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{count}}</h1>
+      <button v-on:click="countUp">UP</button>
+      <button @:click="countDown">DOWN</button>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            count: 0,
+          };
+        },
+        methods: {
+          countUp() {
+            this.count++;
+          },
+          countDown() {
+            this.count--;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

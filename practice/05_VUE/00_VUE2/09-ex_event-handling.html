@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{msg}}</h1>
+      <input type="text" v-model.number="inputNum" />
+      <button @click="checkInput">확인</button>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            msg: '랜덤으로 생성된 숫자(1 ~ 20)를 맞춰 보세요!',
+            randNum: parseInt(Math.random() * 20) + 1,
+            inputNum: 0,
+          };
+        },
+        methods: {
+          checkInput() {
+            if (this.inputNum < this.randNum) {
+              this.msg = 'UP';
+            } else if (this.inputNum > this.randNum) {
+              this.msg = 'DOWN';
+            } else {
+              this.msg = '정답!';
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
