@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <style>
+    .completed {
+      text-decoration: line-through;
+    }
+  </style>
+  <body>
+    <div id="app">
+      할 일 <input type="text" v-model="todoText" @keyup.enter="addTodo" />
+      <button v-on:click="addTodo">추가</button>
+      <h2>할 일 목록</h2>
+      <ul>
+        <li
+          v-for="(todo, index) in todolist"
+          v-bind:key="todo.id"
+          v-bind:class="todo.completed?'completed':''"
+          v-on:click="toggleCompleted(todo.id)"
+        >
+          {{ todo.text }}
+          <button v-on:click.stop="deleteTodo(todo.id)">삭제</button>
+        </li>
+      </ul>
+    </div>
+    <script>
+      const now = new Date().getTime();
+
+      Vue.createApp({
+        name: 'TodoList',
+        data() {
+          return {
+            todolist: [
+              { id: now, text: '자전거 타기', completed: false },
+              { id: now + 1, text: '반장 선거', completed: false },
+              { id: now + 2, text: '유세 하기', completed: false },
+              { id: now + 3, text: '투표 하기', completed: false },
+            ],
+            todoText: '',
+          };
+        },
+        methods: {
+          addTodo() {
+            this.todolist.push({
+              id: new Date().getTime(),
+              text: this.todoText,
+              completed: false,
+            });
+
+            this.todoText = '';
+          },
+          deleteTodo(id) {
+            for (let i = 0; i < this.todolist.length; i++) {
+              if (id === this.todolist[i].id) {
+                this.todolist.splice(i, 1);
+              }
+            }
+          },
+          toggleCompleted(id) {
+            for (let i = 0; i < this.todolist.length; i++) {
+              if (id === this.todolist[i].id) {
+                this.todolist[i].completed = !this.todolist[i].completed;
+              }
+            }
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
