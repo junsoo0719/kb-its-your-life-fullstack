@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .bg-orange {
+        background-color: orange;
+      }
+      .font-white {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 :class="myStyle">배경은 하늘색</h1>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            myStyle: 'bg-orange font-white',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .bg-orange {
+        background-color: orange;
+      }
+      .bg-skyblue {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1 :class="myStyle">배경은 {{myColor}}</h1>
+      <label for="checkbox">오렌지색?</label
+      ><input type="checkbox" id="checkbox" v-model="isOrange" />
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            isOrange: true,
+          };
+        },
+
+        computed: {
+          // 반응형 데이터 변경 일어나면 자동 계산
+          myStyle() {
+            return this.isOrange ? 'bg-orange' : 'bg-skyblue';
+          },
+          myColor() {
+            return this.isOrange ? '오랜지색' : '하늘색';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

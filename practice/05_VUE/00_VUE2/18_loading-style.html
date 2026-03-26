@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+      .spinner {
+        width: 40px;
+        height: 40px;
+        margin: 30px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top: 4px solid #3498db;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .loading-bg {
+        background-color: skyblue;
+      }
+
+      .success-bg {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div :class="isLoading?'loading-bg':'success-bg'">
+        <h1>제가 좋아하는 음식들</h1>
+
+        <label for="category">카테고리 선택 : </label>
+        <select id="category" v-model="selectedCategory">
+          <option value="all">전체</option>
+          <option value="korean">한식</option>
+          <option value="japanese">일식</option>
+          <option value="chinese">중식</option>
+        </select>
+
+        <div class="loading-container" v-if="isLoading">
+          <div class="spinner"></div>
+          <p>데이터 로딩 중....</p>
+        </div>
+
+        <ul v-else>
+          <li v-for="(food, index) in filteredFoods" :key="index">
+            {{ food.food }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            baseUrl:
+              'https://port-0-kb7-back-node-mmc3pmla14c7b8b4.sel3.cloudtype.app',
+            foods: [],
+            selectedCategory: 'all',
+            isLoading: true,
+          };
+        },
+        methods: {
+          async fetchFoods() {
+            try {
+              this.isLoading = true;
+              const response = await fetch(`${this.baseUrl}/food/all`);
+              this.foods = await response.json();
+            } catch (err) {
+              console.error(err);
+            } finally {
+              this.isLoading = false;
+            }
+          },
+        },
+        computed: {
+          filteredFoods() {
+            if (this.selectedCategory === 'all') return this.foods;
+
+            return this.foods.filter((food, index) => {
+              return food.category === this.selectedCategory;
+            });
+          },
+        },
+        mounted() {
+          this.fetchFoods();
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

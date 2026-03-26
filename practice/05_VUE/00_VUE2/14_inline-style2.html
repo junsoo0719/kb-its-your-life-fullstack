@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 적용 안됨 -->
+      <!-- <h1 :style="{ backgroundColor, fontStyle}"> -->
+      <!-- 아래처럼 전개연산자 사용하면 적용됨 -->
+      <h1 :style="{ ...backgroundColor, ...fontStyle}">
+        여러 스타일 적용하기 by 객체
+      </h1>
+      <!-- 객체를 전달할 때는 배열 사용 -->
+      <h1 :style="[backgroundColor, fontStyle]">
+        여러 스타일 적용하기 by 배열
+      </h1>
+    </div>
+    <script>
+      Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            backgroundColor: { backgroundColor: 'dodgerblue' },
+            fontStyle: { color: 'red' },
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
