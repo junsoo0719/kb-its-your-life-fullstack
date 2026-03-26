@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .buttonColor {
+        background-color: aqua; /* 배경색 아쿠아 */
+        color: black; /* 글자색 검정 */
+      }
+      .buttonLayout {
+        text-align: center; /* 텍스트 중앙 정렬 */
+        width: 120px; /* 폭 120px */
+      }
+      .staticBorder {
+        /* 경계선 카키색 점선 굵기 1px */
+        border: khaki dashed 1px;
+      }
+    </style>
+    <div id="app">
+      <button class="staticBorder" :class="myColor">테스트 버튼</button>
+    </div>
+    <script src="https://unpkg.com/vue"></script>
+    <script type="text/javascript">
+      var vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return {
+            myColor: 'buttonColor buttonLayout',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
