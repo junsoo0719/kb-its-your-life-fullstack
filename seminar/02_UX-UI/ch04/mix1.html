@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>mix1</title>
+    <style>
+      /* 부모: relative, 자식: absolute 중요! */
+      div {
+        position: relative;
+        border: 1px solid red;
+      }
+
+      div > p {
+        position: absolute;
+        height: 20px;
+        width: 15px;
+        background: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>부모 : relative / 자식 : absolute</h3>
+    <hr />
+
+    <div>
+      <img
+        src="christmastree.png"
+        width="200"
+        height="200"
+        alt="크리스마스 트리"
+      />
+      <p style="left: 50px; top: 30px">M</p>
+      <p style="left: 100px; top: 0px">E</p>
+      <p style="left: 100px; top: 80px">R</p>
+      <p style="left: 150px; top: 110px">R</p>
+      <p style="left: 30px; top: 130px">Y</p>
+    </div>
+  </body>
+</html>

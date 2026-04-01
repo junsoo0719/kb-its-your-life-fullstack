@@ -1,0 +1,18 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.text {
+  border: 1px solid black;
+  clear: both;
+}

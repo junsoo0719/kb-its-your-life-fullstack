@@ -1,0 +1,26 @@
+.container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.item {
+  padding: 5px 45px;
+  margin: 5px;
+  width: 100px;
+}
+.item1 {
+  background: red;
+}
+.item2 {
+  background: orange;
+}
+.item3 {
+  background: yellow;
+}
+.item4 {
+  background: green;
+}
+.item5 {
+  background: blue;
+}

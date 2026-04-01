@@ -1,0 +1,53 @@
+.container {
+  border: 1px solid black;
+  width: 600px;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+}
+.item {
+  padding: 5px 45px;
+  margin: 5px;
+}
+.item1 {
+  background: red;
+}
+.item2 {
+  background: orange;
+}
+.item3 {
+  background: yellow;
+}
+.item4 {
+  background: green;
+}
+.item5 {
+  background: blue;
+}
+
+/* 각 item의 font-size를 다르게 적용 */
+
+.item1 p {
+  font-size: 16px;
+}
+.item2 p {
+  font-size: 28px;
+}
+.item3 p {
+  font-size: 40px;
+}
+.item4 p {
+  font-size: 22px;
+}
+.item5 p {
+  font-size: 60px;
+}
+
+/* 각 item에 baseline 적용 */
+.item1,
+.item2,
+.item3,
+.item4,
+.item5 {
+  align-self: baseline;
+}

@@ -1,0 +1,20 @@
+.container {
+  width: 500px;
+  border: 1px solid black;
+  background: yellow;
+  display: flex;
+}
+
+.item {
+  border: 1px solid black;
+}
+
+.item1 {
+  background: red;
+  flex-basis: 100px;
+}
+
+.item2 {
+  background: orange;
+  flex-basis: 100px;
+}
