@@ -1,4 +1,4 @@
-package ch07.sec10;
+package ch07.sec10.exam01;
 
 public abstract class Phone {
     //필드 선언
