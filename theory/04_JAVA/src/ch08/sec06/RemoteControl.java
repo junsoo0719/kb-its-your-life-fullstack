@@ -1,4 +1,4 @@
-package ch08.sec02;
+package ch08.sec06;
 
 public interface RemoteControl {
     int MAX_VOLUME = 10;

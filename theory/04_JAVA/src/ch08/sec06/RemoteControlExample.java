@@ -1,4 +1,8 @@
-package ch08.sec02;
+package ch08.sec06;
+
+import ch08.sec02.Audio;
+import ch08.sec02.RemoteControl;
+import ch08.sec02.Television;
 
 public class RemoteControlExample {
     public static void main(String[] args) {

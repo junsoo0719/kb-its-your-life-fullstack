@@ -1,4 +1,4 @@
-package ch08.sec06;
+package ch08.sec05;
 
 import ch08.sec02.Audio;
 import ch08.sec02.RemoteControl;
@@ -26,9 +26,6 @@ public class RemoteControlExample {
         //디폴트 메소드 호출
         rc.setMute(true);
         rc.setMute(false);
-
-        //정적 메소드 호출
-        RemoteControl.changeBattery();
     }
 }
 
