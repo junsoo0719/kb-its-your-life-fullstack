@@ -1,0 +1,16 @@
+package nested.group;
+
+public class CarMain {
+    public static void main(String[] args) {
+        Car car = new Car("페라리");
+
+        car.drive();
+
+        Engine engine = new Engine();
+        engine.start();
+
+        car.isStarted = true;
+
+        car.drive();
+    }
+}
