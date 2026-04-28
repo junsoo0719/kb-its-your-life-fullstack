@@ -1,0 +1,7 @@
+package exceptioin.real.exception;
+
+public class MyUnCheckException extends RuntimeException {
+    public MyUnCheckException(String message) {
+        super(message);
+    }
+}
