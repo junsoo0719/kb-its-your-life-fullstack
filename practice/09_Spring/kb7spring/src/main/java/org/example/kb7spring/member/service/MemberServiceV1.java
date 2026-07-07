@@ -1,0 +1,37 @@
+package org.example.kb7spring.member.service;
+
+import lombok.RequiredArgsConstructor;
+import org.example.kb7spring.member.domain.Member;
+import org.example.kb7spring.member.dto.MemberDto;
+import org.example.kb7spring.member.repository.MemberRepositoryV0;
+import org.example.kb7spring.member.repository.MemberRepositoryV1;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class MemberServiceV1 {
+    private final MemberRepositoryV1 memberRepository;
+
+//    @Autowired
+//    public MemberServiceV1(MemberRepositoryV1 memberRepositoryV1) {
+//        this.memberRepositoryV1 = memberRepositoryV1;
+//    }
+
+    public List<MemberDto> getMemberList() {
+        List<Member> entityList = memberRepository.findAll();
+        List<MemberDto> dtoList = new ArrayList<>();
+
+        for (Member member : entityList) {
+            MemberDto dto = new MemberDto();
+            dto.setName(member.getName());
+            dto.setEmail(member.getEmail());
+            dtoList.add(dto);
+        }
+
+        return dtoList;
+    }
+}
